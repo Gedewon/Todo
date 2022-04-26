@@ -1,14 +1,20 @@
-import _ from "lodash";
-import "./style.css";
-const a = "gedi";
+import './style.css';
 
-function component() {
-  const element = document.createElement("div");
+const todoList = [
+  { description: 'buy laptop', completed: false, index: 0 },
+  { description: 'read books', completed: false, index: 1 },
+  { description: 'study c#', completed: false, index: 2 },
+];
 
-  // Lodash, currently included via a script, is required for this line to work
-  element.innerHTML = _.join(["Hello", "webpack"], " ");
-
-  return element;
+function render() {
+  let screenElement = '';
+  todoList.forEach((list) => {
+    screenElement += `<li id=${list.index}><p><input type="checkbox" name="" id="">${list.description}</p>&vellip;</li>`;
+  });
+  return screenElement;
 }
 
-document.body.appendChild(component());
+window.onload = () => {
+  const root = document.querySelector('.todos-list');
+  root.innerHTML = render();
+};
