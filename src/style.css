@@ -7,7 +7,7 @@ body {
   padding: 0;
 }
 
-main {
+section {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,20 +18,24 @@ main {
   background-color: #fff;
   padding: 2%;
 }
+
 #head-list {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
 }
+
 #add-list input {
   padding: 10px;
-  border: 0px;
+  border: 0;
   width: 100%;
 }
+
 ul {
-  padding: 0px;
+  padding: 0;
 }
+
 li {
   justify-content: space-between;
   align-items: center;
@@ -39,10 +43,12 @@ li {
   list-style: none;
   border-bottom: 2px solid gray;
 }
-section {
+
+div {
   width: 100%;
   border-bottom: 2px solid gray;
 }
+
 button {
   width: 100%;
   padding: 10px;

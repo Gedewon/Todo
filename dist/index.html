@@ -6,24 +6,24 @@
     <title>Todo list</title>
   <script defer src="main.js"></script></head>
   <body>
-    <main>
-      <section id="head-list">
-        <p>Today's To Do</p>
+    <section>
+      <div id="head-list">
+        <h2>Today's To Do</h2>
         <span>&#x021BA;</span>
-      </section>
-      <section id="add-list">
-        <label for="add-list"></label>
+      </div>
+      <div id="add-list">
+        <label for="input-list"></label>
         <input
           type="text"
-          name="add-list"
-          id="add-list"
+          name="input-list"
+          id="input-list"
           placeholder="Add to your list...."
         />
-      </section>
-      <section id="show-list">
+      </div>
+      <div id="show-list">
         <ul class="todos-list"></ul>
-      </section>
+      </div>
       <button>Clear all completed</button>
-    </main>
+    </section>
   </body>
 </html>
