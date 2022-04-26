@@ -9,7 +9,7 @@ const todoList = [
 function render() {
   let screenElement = "";
   for (const list of todoList) {
-    screenElement += `<li id=${list.index}>${list.description}</li>`;
+    screenElement += `<li id=${list.index}><p><input type="checkbox" name="" id="">${list.description}</p>&vellip;</li>`;
   }
   return screenElement;
 }
