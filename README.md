@@ -2,7 +2,7 @@
 
 SPA vanilla js application
 
-![screencapture-gedewon-github-io-Awesome-book-2022-04-21-16_08_48](https://user-images.githubusercontent.com/56429354/164465005-8a31cc73-5dbd-44ff-89aa-d734d44da1e2.png)
+
 
 # Todo List website
 
