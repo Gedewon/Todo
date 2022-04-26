@@ -1,6 +1,4 @@
-import _ from "lodash";
 import "./style.css";
-const a = "gedi";
 
 function component() {
   const element = document.createElement("div");
