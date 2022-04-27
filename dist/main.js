@@ -116,7 +116,17 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\nconst todoList = [\n  { description: 'buy laptop', completed: false, index: 0 },\n  { description: 'read books', completed: false, index: 1 },\n  { description: 'study c#', completed: false, index: 2 },\n];\n\nfunction render() {\n  let screenElement = '';\n  todoList.forEach((list) => {\n    screenElement += `<li id=${list.index}><p><input type=\"checkbox\" name=\"\" id=\"\">${list.description}</p>&vellip;</li>`;\n  });\n  return screenElement;\n}\n\nwindow.onload = () => {\n  const root = document.querySelector('.todos-list');\n  root.innerHTML = render();\n};\n\n\n//# sourceURL=webpack://Todo/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils.js */ \"./src/utils.js\");\n\n\n\nconst task1 = new _utils_js__WEBPACK_IMPORTED_MODULE_1__.Task(\"buy ldaptop\", 0);\nconst task2 = new _utils_js__WEBPACK_IMPORTED_MODULE_1__.Task(\"buy pc\", 0);\nconst todoList = new _utils_js__WEBPACK_IMPORTED_MODULE_1__.TodoList([task1, task2]);\nconst root = document.querySelector(\".todos-list\");\nconst taskInput = document.querySelector(\"#input-list\");\n\nfunction render() {\n  let screenElement = \"\";\n  todoList.getTasks().forEach((list) => {\n    screenElement += `<li contenteditable=\"true\" id=${list.index}><p><input type=\"checkbox\" name=\"\" id=\"\">${list.description}</p>&vellip;</li>`;\n  });\n  return screenElement;\n}\ntaskInput.addEventListener(\"change\", (e) => {\n  todoList.addTask(e.target.value, todoList.getIndex());\n  init();\n});\nfunction init() {\n  root.innerHTML = render();\n}\nwindow.onload = init();\n\n\n//# sourceURL=webpack://Todo/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/utils.js":
+/*!**********************!*\
+  !*** ./src/utils.js ***!
+  \**********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"Task\": () => (/* binding */ Task),\n/* harmony export */   \"TodoList\": () => (/* binding */ TodoList)\n/* harmony export */ });\nclass Task {\n  constructor(description, index, completed = false) {\n    this.description = description;\n    this.index = index;\n    this.completed = completed;\n  }\n}\n\nclass TodoList {\n  constructor(todoList = []) {\n    this.todoList = todoList;\n  }\n  getTasks() {\n    return this.todoList;\n  }\n  addTask(description, index) {\n    const newTask = new Task(description, index);\n    this.todoList.push(newTask);\n  }\n  getIndex() {\n    return this.todoList.length;\n  }\n}\n\n\n//# sourceURL=webpack://Todo/./src/utils.js?");
 
 /***/ })
 
