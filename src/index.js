@@ -1,24 +1,36 @@
 import "./style.css";
-import { TodoList, Task } from "./utils.js";
+import { TodoList } from "./utils.js";
 
-const task1 = new Task("buy ldaptop", 0);
-const task2 = new Task("buy pc", 0);
-const todoList = new TodoList([task1, task2]);
 const root = document.querySelector(".todos-list");
 const taskInput = document.querySelector("#input-list");
+
+const todoList = new TodoList();
 
 function render() {
   let screenElement = "";
   todoList.getTasks().forEach((list) => {
-    screenElement += `<li contenteditable="true" id=${list.index}><p><input type="checkbox" name="" id="">${list.description}</p>&vellip;</li>`;
+    screenElement += `<li  id=${list.index}><input type="checkbox" name="" ><input class="each-list" id=${list.index} type="text" contenteditable="true" value=${list.description}></input><span class="move-delete" id=${list.index}>&vellip;</span></li>`;
   });
   return screenElement;
 }
+
+function init() {
+  root.innerHTML = render();
+  document.querySelectorAll(".move-delete").forEach((el) => {
+    el.addEventListener("click", (e) => {
+      todoList.remove(e.target.id);
+    });
+  });
+  document.querySelectorAll(".each-list").forEach((el) => {
+    el.addEventListener("change", (e) => {
+      todoList.edit(e.target.value, e.target.id);
+    });
+  });
+}
+
+window.onload = init();
+
 taskInput.addEventListener("change", (e) => {
   todoList.addTask(e.target.value, todoList.getIndex());
   init();
 });
-function init() {
-  root.innerHTML = render();
-}
-window.onload = init();
