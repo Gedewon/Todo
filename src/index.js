@@ -1,20 +1,57 @@
 import './style.css';
+import TodoList from './utils.js';
 
-const todoList = [
-  { description: 'buy laptop', completed: false, index: 0 },
-  { description: 'read books', completed: false, index: 1 },
-  { description: 'study c#', completed: false, index: 2 },
-];
+const root = document.querySelector('.todos-list');
+const taskInput = document.querySelector('#input-list');
+const clearButton = document.querySelector('button');
+
+const todoList = new TodoList();
 
 function render() {
   let screenElement = '';
-  todoList.forEach((list) => {
-    screenElement += `<li id=${list.index}><p><input type="checkbox" name="" id="">${list.description}</p>&vellip;</li>`;
+  todoList.getTasks().forEach((list) => {
+    screenElement += `<li  id=${list.index}><input type="checkbox" class="check-box" id=${list.index} name="" ><input class="each-list" id=${list.index} type="text" contenteditable="true" value=${list.description}></input><span class="move-delete" id=${list.index}>&#x02297;
+    </span></li>`;
   });
   return screenElement;
 }
 
-window.onload = () => {
-  const root = document.querySelector('.todos-list');
+function init() {
   root.innerHTML = render();
-};
+  document.querySelectorAll('.move-delete').forEach((el) => {
+    el.addEventListener('click', (e) => {
+      todoList.remove(e.target.id);
+    });
+  });
+  document.querySelectorAll('.each-list').forEach((el) => {
+    el.addEventListener('change', (e) => {
+      todoList.edit(e.target.value, e.target.id);
+    });
+  });
+  document.querySelectorAll('.check-box').forEach((el) => {
+    el.addEventListener('change', () => {
+      const checkboxElement = Array.from(
+        document.querySelectorAll('.each-list  '),
+      ).filter((inputElement) => inputElement.id === el.id)[0];
+      if (el.checked) {
+        checkboxElement.classList.add('strik-through');
+        todoList.markAsDone(el.id);
+      } else {
+        checkboxElement.classList.remove('strik-through');
+        todoList.markAsDone(el.id);
+      }
+    });
+  });
+  clearButton.addEventListener('click', () => {
+    todoList.clearList();
+  });
+}
+
+window.onload = init();
+
+taskInput.addEventListener('keyup', (e) => {
+  if (e.keyCode === 13) {
+    todoList.addTask(e.target.value, todoList.getIndex());
+    init();
+  }
+});

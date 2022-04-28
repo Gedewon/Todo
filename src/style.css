@@ -53,3 +53,18 @@ button {
   width: 100%;
   padding: 10px;
 }
+
+.move-delete {
+  display: block;
+  width: 20px;
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+}
+
+.strik-through {
+  text-decoration: line-through;
+}
+
+.each-list {
+  border: 0 none;
+}
