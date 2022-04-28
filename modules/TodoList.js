@@ -1,4 +1,4 @@
-import Task from './task.js';
+import Task from './Task.js';
 
 export default class TodoList {
   constructor(todoList = []) {
