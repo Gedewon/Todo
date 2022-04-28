@@ -59,3 +59,10 @@ button {
   aspect-ratio: 1 / 1;
   cursor: pointer;
 }
+
+.strik-through {
+  text-decoration: line-through;
+}
+.each-list {
+  border: 0px none;
+}

@@ -9,7 +9,7 @@ const todoList = new TodoList();
 function render() {
   let screenElement = "";
   todoList.getTasks().forEach((list) => {
-    screenElement += `<li  id=${list.index}><input type="checkbox" name="" ><input class="each-list" id=${list.index} type="text" contenteditable="true" value=${list.description}></input><span class="move-delete" id=${list.index}>&#x02297;
+    screenElement += `<li  id=${list.index}><input type="checkbox" class="check-box" id=${list.index} name="" ><input class="each-list" id=${list.index} type="text" contenteditable="true" value=${list.description}></input><span class="move-delete" id=${list.index}>&#x02297;
     </span></li>`;
   });
   return screenElement;
@@ -25,6 +25,16 @@ function init() {
   document.querySelectorAll(".each-list").forEach((el) => {
     el.addEventListener("change", (e) => {
       todoList.edit(e.target.value, e.target.id);
+    });
+  });
+  document.querySelectorAll(".check-box").forEach((el) => {
+    el.addEventListener("change", (e) => {
+      let checkboxElement = Array.from(
+        document.querySelectorAll(`.each-list  `)
+      ).filter((inputElement) => inputElement.id == el.id)[0];
+      el.checked
+        ? checkboxElement.classList.add("strik-through")
+        : checkboxElement.classList.remove("strik-through");
     });
   });
 }
