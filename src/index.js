@@ -3,7 +3,7 @@ import TodoList from "./utils.js";
 
 const root = document.querySelector(".todos-list");
 const taskInput = document.querySelector("#input-list");
-
+const clearButton = document.querySelector("button");
 const todoList = new TodoList();
 
 function render() {
@@ -32,11 +32,19 @@ function init() {
       let checkboxElement = Array.from(
         document.querySelectorAll(`.each-list  `)
       ).filter((inputElement) => inputElement.id == el.id)[0];
-      el.checked
-        ? checkboxElement.classList.add("strik-through")
-        : checkboxElement.classList.remove("strik-through");
+      if (el.checked) {
+        checkboxElement.classList.add("strik-through");
+        todoList.markAsDone(el.id);
+      } else {
+        checkboxElement.classList.remove("strik-through");
+        todoList.markAsDone(el.id);
+      }
     });
   });
+  clearButton.addEventListener("click", () => {
+    todoList.clearList();
+  });
+  console.log(clearButton);
 }
 
 window.onload = init();

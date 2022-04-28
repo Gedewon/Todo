@@ -37,6 +37,12 @@ export default class TodoList {
     localStorage.setItem("List", JSON.stringify(this.todoList));
   }
   markAsDone(index) {
-    this.todoList[index - 1].completed = true;
+    this.todoList[index - 1].completed = !this.todoList[index - 1].completed;
+    console.log(this.todoList[index - 1]);
+  }
+  clearList() {
+    this.todoList = this.todoList.filter((task) => task.completed == false);
+    this.shuffle();
+    window.location.reload();
   }
 }
