@@ -1,7 +1,6 @@
 # To-do list
 
-SPA vanilla js application
-
+SPA vanilla js application is a tool that helps to organize your day. It simply lists the things that you need to do and allows you to mark them as complete.
 
 
 # Todo List website
@@ -15,6 +14,7 @@ SPA vanilla js application
 - JavaScripts
 - GitFlow
 - Linters
+- Webpack
 
 ## Live Demo
 
