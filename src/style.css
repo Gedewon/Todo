@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 
 body {
-  background-color: #fbf5f5;
+  background-color: #5ced4f;
   font-family: Poppins, sans-serif;
   margin: 0;
   padding: 0;
@@ -17,6 +17,8 @@ section {
   text-align: left;
   background-color: #fff;
   padding: 2%;
+  border-radius: 16px;
+  box-shadow: 10px 20px 8px rgb(0 0 0 / 45%);
 }
 
 #head-list {
@@ -46,12 +48,15 @@ li {
 
 div {
   width: 100%;
-  border-bottom: 2px solid gray;
+  margin: auto 50%;
+
+  /* border-bottom: 2px solid gray; */
 }
 
 button {
   width: 100%;
   padding: 10px;
+  border-radius: 12px;
 }
 
 .move-delete {
@@ -67,6 +72,7 @@ button {
 
 .each-list {
   border: 0 none;
+  font-size: 22px;
 }
 
 .refresh {
