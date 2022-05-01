@@ -3,9 +3,7 @@
 SPA vanilla js application is a tool that helps to organize your day. It simply lists the things that you need to do and allows you to mark them as complete.
 
 
-# Todo List website
-
-> a website to track your daily tasks
+> ![screencapture-gedewon-github-io-Todo-dist-index-html-2022-05-01-23_20_59](https://user-images.githubusercontent.com/56429354/166163196-eaf34c05-bcb4-4673-bd17-09086275d607.png)
 
 ## Built With
 
