@@ -16,7 +16,7 @@ SPA vanilla js application is a tool that helps to organize your day. It simply 
 
 ## Live Demo
 
-[Live Demo Link](https://gedewon.github.io/Todo/)
+[Live Demo Link](https://gedewon.github.io/todo/dist/index.html)
 
 ## Getting Started
 
