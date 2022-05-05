@@ -22,7 +22,8 @@ export default class TodoList {
   remove(index) {
     this.todoList.splice(index - 1, 1);
     this.shuffle();
-    window.location.reload();
+    // window.location.reload();
+    // comment this out for test case's
   }
 
   shuffle() {
