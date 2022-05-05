@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1651776944143" clover="3.2.0">
-  <project timestamp="1651776944143" name="All files">
-    <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0" elements="0" coveredelements="0" complexity="0" loc="0" ncloc="0" packages="0" files="0" classes="0"/>
+<coverage generated="1651780061143" clover="3.2.0">
+  <project timestamp="1651780061143" name="All files">
+    <metrics statements="21" coveredstatements="8" conditionals="4" coveredconditionals="4" methods="12" coveredmethods="4" elements="37" coveredelements="16" complexity="0" loc="21" ncloc="21" packages="1" files="2" classes="2"/>
+    <file name="Task.js" path="/home/gedi/Desktop/Todo/modules/Task.js">
+      <metrics statements="3" coveredstatements="3" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="5" count="1" type="stmt"/>
+    </file>
+    <file name="TodoList.js" path="/home/gedi/Desktop/Todo/modules/TodoList.js">
+      <metrics statements="18" coveredstatements="5" conditionals="3" coveredconditionals="3" methods="11" coveredmethods="3"/>
+      <line num="5" count="1" type="cond" truecount="2" falsecount="0"/>
+      <line num="9" count="1" type="stmt"/>
+      <line num="13" count="1" type="stmt"/>
+      <line num="14" count="1" type="stmt"/>
+      <line num="15" count="1" type="stmt"/>
+      <line num="19" count="0" type="stmt"/>
+      <line num="23" count="0" type="stmt"/>
+      <line num="24" count="0" type="stmt"/>
+      <line num="25" count="0" type="stmt"/>
+      <line num="29" count="0" type="stmt"/>
+      <line num="30" count="0" type="stmt"/>
+      <line num="32" count="0" type="stmt"/>
+      <line num="36" count="0" type="stmt"/>
+      <line num="37" count="0" type="stmt"/>
+      <line num="41" count="0" type="stmt"/>
+      <line num="45" count="0" type="stmt"/>
+      <line num="46" count="0" type="stmt"/>
+      <line num="47" count="0" type="stmt"/>
+    </file>
   </project>
 </coverage>
