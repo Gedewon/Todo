@@ -45,6 +45,6 @@ export default class TodoList {
   clearList() {
     this.todoList = this.todoList.filter((task) => task.completed === false);
     this.shuffle();
-    window.location.reload();
+    // window.location.reload();
   }
 }
