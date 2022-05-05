@@ -1,8 +1,8 @@
-import Task from "./Task.js";
+import Task from './Task.js';
 
 export default class TodoList {
   constructor(todoList = []) {
-    this.todoList = JSON.parse(localStorage.getItem("List")) || todoList;
+    this.todoList = JSON.parse(localStorage.getItem('List')) || todoList;
   }
 
   getTasks() {
@@ -12,7 +12,7 @@ export default class TodoList {
   addTask(description, index) {
     const newTask = new Task(description, index);
     this.todoList.push(newTask);
-    localStorage.setItem("List", JSON.stringify(this.todoList));
+    localStorage.setItem('List', JSON.stringify(this.todoList));
   }
 
   getIndex() {
@@ -30,12 +30,12 @@ export default class TodoList {
     this.todoList.forEach((element, index) => {
       element.index = index + 1;
     });
-    localStorage.setItem("List", JSON.stringify(this.todoList));
+    localStorage.setItem('List', JSON.stringify(this.todoList));
   }
 
   edit(value, index) {
     this.todoList[index - 1].description = value;
-    localStorage.setItem("List", JSON.stringify(this.todoList));
+    localStorage.setItem('List', JSON.stringify(this.todoList));
   }
 
   markAsDone(index) {
