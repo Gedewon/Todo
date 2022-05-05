@@ -27,4 +27,9 @@ describe("Status and task Change", () => {
       ])
     );
   });
+
+  test("should remove completed tasks ", () => {
+    todoList.clearList();
+    expect(todoList.getTasks().length).toBe(0);
+  });
 });
